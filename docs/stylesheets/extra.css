@@ -1,0 +1,7 @@
+.md-sidebar--secondary {
+  display: none !important;
+}
+
+.md-grid {
+  max-width: 1440px;
+}
