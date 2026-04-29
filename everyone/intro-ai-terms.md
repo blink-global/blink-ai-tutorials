@@ -111,12 +111,20 @@ Why does this matter? Because deep learning is what unlocked modern AI. The Chat
 
 ### The relationship
 
-```
-AI (the goal: machines doing human tasks)
-└── ML (the approach: learn from data)
-    └── DL (the technique: deep neural networks)
-        └── Foundation Models (huge DL models — coming up next)
-            └── LLMs, Multimodal Models, etc.
+```mermaid
+flowchart TD
+    AI["<b>AI</b><br/>the goal: machines<br/>doing human tasks"]
+    ML["<b>ML</b><br/>the approach:<br/>learn from data"]
+    DL["<b>DL</b><br/>the technique:<br/>deep neural networks"]
+    FM["<b>Foundation Models</b><br/>huge DL models<br/>trained on general data"]
+    LLM["<b>LLMs, Multimodal Models</b><br/>specialized foundation models"]
+
+    AI --> ML --> DL --> FM --> LLM
+
+    classDef outer fill:#e8f0fe,stroke:#1a73e8,color:#1a3a8a
+    classDef inner fill:#fff4e5,stroke:#f29900,color:#5c3a00
+    class AI,ML,DL outer
+    class FM,LLM inner
 ```
 
 Every LLM is a deep learning model. Every deep learning model is machine learning. All machine learning is AI.
@@ -181,6 +189,24 @@ So the lifecycle is:
 
 > **Training** _produces_ a model. **Inference** _uses_ the model.
 > Training happens once (or occasionally). Inference happens every time someone asks the model a question.
+
+```mermaid
+flowchart LR
+    subgraph Training["🏗️ Training — happens once"]
+        T1[Lots of<br/>labeled data] --> T2[Adjust weights<br/>millions of times] --> T3[(Trained<br/>model)]
+    end
+
+    subgraph Inference["⚡ Inference — happens every request"]
+        I1[New input] --> I2[Run through<br/>model] --> I3[Output]
+    end
+
+    T3 -.->|deployed| I2
+
+    classDef train fill:#fce8e6,stroke:#d93025,color:#5c1a14
+    classDef infer fill:#e6f4ea,stroke:#188038,color:#0d3d1a
+    class T1,T2,T3 train
+    class I1,I2,I3 infer
+```
 
 ### Real examples of models
 
@@ -329,6 +355,30 @@ An agent takes the same underlying LLM and wraps it in a loop:
 5. **Observe:** it sees the result of the action.
 6. **Adjust:** it decides the next step based on what it found.
 7. **Loop** until the goal is complete.
+
+```mermaid
+flowchart TD
+    User([👤 User sets goal])
+    Plan[🧭 Plan next step]
+    Act[🛠️ Use a tool<br/>CRM · email · browser · code]
+    Observe[👀 Observe result]
+    Check{Goal<br/>complete?}
+    Done([✅ Report back to user])
+
+    User --> Plan
+    Plan --> Act
+    Act --> Observe
+    Observe --> Check
+    Check -->|No, keep going| Plan
+    Check -->|Yes| Done
+
+    classDef human fill:#e8f0fe,stroke:#1a73e8,color:#1a3a8a
+    classDef agent fill:#fff4e5,stroke:#f29900,color:#5c3a00
+    classDef decision fill:#fce8e6,stroke:#d93025,color:#5c1a14
+    class User,Done human
+    class Plan,Act,Observe agent
+    class Check decision
+```
 
 The key shift: instead of _you_ being the one who reads, decides, and clicks, the agent does it for you. You become the goal-setter and reviewer rather than the operator.
 
