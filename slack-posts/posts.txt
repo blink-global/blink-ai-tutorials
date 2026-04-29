@@ -1,0 +1,21 @@
+:coffee: AI Espresso #1 — from AI to Agents in 10 minutes.
+Hey @everyone :wave: Let's kick off our AI learning & training with the basics.
+
+AI: the field of building machines (hardware & software) that can do tasks once limited to humans — recognizing faces, playing chess, writing essays, forecasting sales, writing code.
+
+ML & DL: Machine Learning and Deep Learning are AI subfields that build systems by learning from data instead of being explicitly programmed. Give computers good data and they extract patterns to answer questions like: what's this house worth? is this email spam? which leads are most likely to convert? which invoices look fraudulent? which customers are about to churn? DL is the branch of ML using deep neural networks, and it powers most modern AI (that's the deep-tech side :wink:).
+
+Training: the process of teaching a computer by feeding it lots of data. It makes predictions, checks how wrong it was, and adjusts itself to do better — repeated many millions of times until it gets good.
+
+Model: the result of training — a file full of numbers (called weights) that captures everything learned from the data. You feed it an input, it gives you a prediction (an answer to your question). Training produces a model; using it (running it on new input) is called inference.
+
+Foundation Models: massive models trained on huge, general datasets, then adapted to many tasks. A general-purpose brain you can specialize as needed. Before foundation models, each model had to be trained from scratch for one narrow task — like sales prediction from raw sales data, or image classification. Now one model can draft a sales email, summarize a support ticket, and explain a contract clause. "GPT-4" and "Claude" are foundation models.
+
+LLMs: foundation models specialized in language. Trained on enormous text corpora to read, write, summarize, translate, and code. Useful across the company — drafting proposals, summarizing meeting notes, answering policy questions, cleaning up reports. Claude, ChatGPT, and Gemini are LLMs.
+
+Multimodal Models: foundation models that handle multiple input types — text, images, video — in one model. Show one a screenshot of a dashboard and ask for insights, hand it a scanned invoice and get structured data back, share a product photo and get marketing copy, drop in a recorded sales call and get a summary with action items, or send a warehouse photo and ask what's low on stock.
+
+Agents: AI systems that act, not just answer. They take a goal, plan steps, use tools (Gmail, Salesforce, Excel, GitHub, Jira, browsers), and adjust based on results. Instead of "draft a follow-up email," an agent can pull the deal from the CRM, check recent activity, draft the email, and schedule the send. Instead of "write a function," it can read the repo, write it, run tests, and open the PR. LLMs are the brains behind modern agents.
+
+:book: Want the full cup? All of the above explained in depth with more examples in our new GitHub tutorials repo: [link]
+Till next time :coffee:
